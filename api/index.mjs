@@ -28,11 +28,11 @@ app.use("/api", (req, res) => {
 });
 
 const __dirname = path.resolve();
-app.use(express.static("dist"));
-app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(port, () => {
