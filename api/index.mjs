@@ -24,8 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 // app.use("/api", routes);
 
 app.use("/api", (req, res) => {
-  //   return res.json({ msg: "this is a test message" });
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  // return res.json({ msg: "this is a test message" });
+  return res.json({ msg: path.join(__dirname, "public", "index.html") });
+  //   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 const __dirname = path.resolve();
