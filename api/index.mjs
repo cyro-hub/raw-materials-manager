@@ -33,9 +33,9 @@ const __dirname = path.resolve();
 app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.get("/*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "public", "index.html"));
-// });
+app.get("/*", function (req, res) {
+  res.sendFile(path.join("/public", "index.html"));
+});
 
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
