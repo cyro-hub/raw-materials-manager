@@ -24,16 +24,17 @@ app.use(express.urlencoded({ extended: true }));
 // app.use("/api", routes);
 
 app.use("/api", (req, res) => {
-  return res.json({ msg: "this is a test message" });
+  //   return res.json({ msg: "this is a test message" });
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 const __dirname = path.resolve();
 app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+// app.get("/*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
 
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
