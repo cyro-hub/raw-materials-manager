@@ -2,5 +2,9 @@
   "version": 2,
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
   "cleanUrls": true,
-  "public": true
+  "public": true,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/public/(.*)", "dest": "/index.html" }
+  ]
 }
